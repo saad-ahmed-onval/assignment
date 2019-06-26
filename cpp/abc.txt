@@ -1,0 +1,33 @@
+  /*
+            1. reverse the input string(Input_String) to a new variable (temp_string)
+            2. for i=0 to len of Input_String
+              2.a temp_string[i] = Input_String[i] * power (Destination_base, i)
+            3. create variable deci_value=0
+              for i=0 to len
+              3.a decimal_value += temp_string[i]
+
+
+              int conv(decimal_value)
+              {
+                //create new output string (o_string)
+                char ostring[40];
+                int i=0;
+                while(decimal_value != 0)
+                {
+                  int temp = 0;
+                  temp = deci_value % Destination_base;
+                  if(temp<10)
+                  {
+                      o_string[i] = temp;
+                      i++
+                  }
+                  else
+                  {
+                    itemp = temp-9;
+                    o_string[i] = Destination_CharSet[itemp-1];
+                    i++;
+                  }
+                }
+
+              }
+        */
