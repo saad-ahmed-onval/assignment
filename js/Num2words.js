@@ -1,5 +1,5 @@
-var inp = "1234567891231"
-//var st = toString(inp)
+var inp = "123123123123123123123123123"
+var st = toString(inp)
 var str = parseInt(inp)
 var abc = inp.split("").reverse().join("");
 
@@ -195,6 +195,7 @@ for(var i=0;i<temp.length;i++)
                 // console.log()
                 j+=1
             }
+
             
         }
         //---

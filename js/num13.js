@@ -1,4 +1,4 @@
-var inp = "1234567890"
+var inp = "11467"
 //var st = toString(inp)
 var str = parseInt(inp)
 var abc = inp.split("").reverse().join("");
