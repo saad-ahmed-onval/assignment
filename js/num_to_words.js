@@ -31,7 +31,7 @@ else
         console.log(str[i])
 
 
-    let y
+    let y=0
 
     for(i=digit-1;i >= 0; i--)
         {

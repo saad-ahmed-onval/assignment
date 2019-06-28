@@ -11,7 +11,7 @@
             "program": "test.js",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "D:\\training-workspace\\js",
+            "cwd": "D:\\training-workspace\\assignment\\js",
             "environment": [],
             "externalConsole": true
         }
