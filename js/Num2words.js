@@ -1,8 +1,30 @@
-var inp = "1231"
+/*var A = [[1,2,3],[1,2,3,4,5],[1,2,3,4,5,6,7],[1],[1,2]]
+
+for(var i =0 ;i<=A.length;i++)
+{
+    tempA=A[i]
+    for(var j=0;j<tempA.length;j++)
+    {//console.log(tempA[j])}
+}
+*/
+//--------------------------------------------
+var inp = "1231231111"
+var l=inp.length
+console.log("")
 var st = toString(inp)
 var str = parseInt(inp)
 var abc = inp.split("").reverse().join("");
 
+if(l>24)
+{
+    console.log("\tinput length = "+l)
+    console.log("\tSorry cannot process value with more than 10 digits.")
+    console.log()
+    //exit()
+}
+
+else
+{
 console.log("abc:" +abc)
 var out=""
 
@@ -58,6 +80,7 @@ function A(y)
 
 function B(y)
 {
+    console.log("in fun B()")
     var out = ""
     switch(y)
     {
@@ -135,6 +158,10 @@ function placeholder(y)
         break;
         case 9: out=out+" 9illions"
         break;
+        case 10: out=out+" 10illions"
+        break;
+        case 11: out=out+" 11illions"
+        break;
         default: out=" "+out
     }
     return out
@@ -163,19 +190,53 @@ console.log(temp);
 for(var i=0;i<temp.length;i++)
 {   
     ctr = i
-    var z =temp[i].length
-    for(var j=0;j<z;j++)
+    var z =temp[i]
+    for(var j=0;j<z.length;j++)
     {
         if((z[j+1]==null))
         {
-            var y = temp[i][j]
-            out = A(parseInt(y))+" hundred"+out
-            console.log("flag 1 "+ y +"-> "+out)
-            
+            var y = z[j]
+            if(j==2)
+                {
+                    out = A(parseInt(y))+" hundred"+out
+                }
+            else
+            {
+                out = A(parseInt(y))+placeholder(ctr)+out
+                //console.log("-f")
+                {
+                    var y = (z[j]+z[j-1])
+       //--------------------------
+                     if(y>0 && y<10)
+                    {
+
+                        console.log(A(y)+" --- ")
+                    }
+                    else if(y>9 && y<20)
+                    {
+                        out= B(parseInt(y))+placeholder(ctr)+out
+                        console.log("flag 1 "+ y +"-->> "+out)
+                //j+=1
+                    }
+                    else if(y>19)
+                    {
+                        t2 = y.toString()
+                        console.log()
+                        l=parseInt(t2[0])
+                        m=parseInt(t2[1])
+                        out =" "+C(l)+A(m)+placeholder(ctr)+out
+                        //out=out
+                        console.log("flag 2 "+ y +"->"+out)
+                //j+=1
+                    }
+                }
+            }   
+            console.log("flag 3 "+ y +"-> "+out)
+
         }
         else
         {
-            var y = (temp[i][j+1]+temp[i][j])
+            var y = (z[j+1]+z[j])
        //--------------------------
             if(y>0 && y<10)
             {
@@ -184,8 +245,8 @@ for(var i=0;i<temp.length;i++)
             }
             else if(y>9 && y<20)
             {
-                out= B(y)+out
-                console.log("flag 2 "+ y +"-> "+out)
+                out= B(parseInt(y))+placeholder(ctr)+out
+                console.log("flag 4 "+ y +"--> "+out+"???")
                 j+=1
             }
             else if(y>19)
@@ -195,8 +256,8 @@ for(var i=0;i<temp.length;i++)
                 l=parseInt(t2[0])
                 m=parseInt(t2[1])
                 out =" "+C(l)+A(m)+placeholder(ctr)+out
-                console.log("flag 3 "+ y +"->"+out)
-                // console.log()
+                //out=out
+                console.log("flag 5 "+ y +"->"+out)
                 j+=1
             }
 
@@ -204,10 +265,14 @@ for(var i=0;i<temp.length;i++)
         }
         //---
        // out=
+       //
     }
+    
 
 }
 
 console.log(temp);
 //var a = out.split(" ")
 console.log("\n\n\n\nNum:"+inp+"\nfinal: "+out)
+
+}
