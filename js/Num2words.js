@@ -1,14 +1,5 @@
-/*var A = [[1,2,3],[1,2,3,4,5],[1,2,3,4,5,6,7],[1],[1,2]]
-
-for(var i =0 ;i<=A.length;i++)
-{
-    tempA=A[i]
-    for(var j=0;j<tempA.length;j++)
-    {//console.log(tempA[j])}
-}
-*/
 //--------------------------------------------
-var inp = "1231231111"
+var inp = "123123123123123123123"
 var l=inp.length
 console.log("")
 var st = toString(inp)
@@ -25,6 +16,7 @@ if(l>24)
 
 else
 {
+
 console.log("abc:" +abc)
 var out=""
 
@@ -186,7 +178,8 @@ console.log("flag main!")
 //print sliced array
 console.log(temp);
 
-//main code starts from here
+//-----------------main code starts from here-----------------
+
 for(var i=0;i<temp.length;i++)
 {   
     ctr = i
@@ -216,7 +209,6 @@ for(var i=0;i<temp.length;i++)
                     {
                         out= B(parseInt(y))+placeholder(ctr)+out
                         console.log("flag 1 "+ y +"-->> "+out)
-                //j+=1
                     }
                     else if(y>19)
                     {
@@ -225,9 +217,8 @@ for(var i=0;i<temp.length;i++)
                         l=parseInt(t2[0])
                         m=parseInt(t2[1])
                         out =" "+C(l)+A(m)+placeholder(ctr)+out
-                        //out=out
+
                         console.log("flag 2 "+ y +"->"+out)
-                //j+=1
                     }
                 }
             }   
@@ -261,18 +252,14 @@ for(var i=0;i<temp.length;i++)
                 j+=1
             }
 
-            
         }
-        //---
-       // out=
-       //
     }
-    
+
 
 }
 
-console.log(temp);
-//var a = out.split(" ")
+//console.log(temp);
+var a = out.split(" ")
 console.log("\n\n\n\nNum:"+inp+"\nfinal: "+out)
 
 }
