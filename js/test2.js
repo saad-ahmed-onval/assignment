@@ -1,4 +1,14 @@
-var inp = "1231"
+/*var A = [[1,2,3],[1,2,3,4,5],[1,2,3,4,5,6,7],[1],[1,2]]
+
+for(var i =0 ;i<=A.length;i++)
+{
+    tempA=A[i]
+    for(var j=0;j<tempA.length;j++)
+    {//console.log(tempA[j])}
+}
+*/
+//--------------------------------------------
+var inp = "1231231"
 var st = toString(inp)
 var str = parseInt(inp)
 var abc = inp.split("").reverse().join("");
@@ -163,19 +173,25 @@ console.log(temp);
 for(var i=0;i<temp.length;i++)
 {   
     ctr = i
-    var z =temp[i].length
-    for(var j=0;j<z;j++)
+    var z =temp[i]
+    for(var j=0;j<z.length;j++)
     {
         if((z[j+1]==null))
         {
-            var y = temp[i][j]
-            out = A(parseInt(y))+" hundred"+out
+            var y = z[j]
+            if(j==2)
+                {
+                    out = A(parseInt(y))+" hundred"+out
+                }
+            else
+                out = A(parseInt(y))+placeholder(ctr)+" hundred"+out
+                
             console.log("flag 1 "+ y +"-> "+out)
-            
+
         }
         else
         {
-            var y = (temp[i][j+1]+temp[i][j])
+            var y = (z[j+1]+z[j])
        //--------------------------
             if(y>0 && y<10)
             {
@@ -184,7 +200,7 @@ for(var i=0;i<temp.length;i++)
             }
             else if(y>9 && y<20)
             {
-                out= B(y)+out
+                out= B(y)+placeholder(ctr)+out
                 console.log("flag 2 "+ y +"-> "+out)
                 j+=1
             }
@@ -195,6 +211,7 @@ for(var i=0;i<temp.length;i++)
                 l=parseInt(t2[0])
                 m=parseInt(t2[1])
                 out =" "+C(l)+A(m)+placeholder(ctr)+out
+                out=out
                 console.log("flag 3 "+ y +"->"+out)
                 // console.log()
                 j+=1
@@ -204,7 +221,9 @@ for(var i=0;i<temp.length;i++)
         }
         //---
        // out=
+       //
     }
+    
 
 }
 
