@@ -1,23 +1,29 @@
 //--------------------------------------------
-var inp = "123123123123123123123"
+var inp = "0000000000000000000"
+if(inp == 0){
+    console.log("zero only")
+    return 0
+}
 var l=inp.length
 console.log("")
 var st = toString(inp)
 var str = parseInt(inp)
 var abc = inp.split("").reverse().join("");
 
-if(l>24)
+
+if(l>20)
 {
     console.log("\tinput length = "+l)
-    console.log("\tSorry cannot process value with more than 10 digits.")
+    console.log("\tSorry cannot process value with more than 20 digits.")
     console.log()
-    //exit()
+    process.exit()
 }
 
 else
 {
 
-console.log("abc:" +abc)
+console.log("Input: " +inp)
+console.log("\tinput length = "+l)
 var out=""
 
 var num=abc.split("")
@@ -146,7 +152,7 @@ function placeholder(y)
         break;
         case 7: out=out+" septillion"
         break;
-        case 8: out=out+" 8illions"+out
+        case 8: out=out+" octillions"+out
         break;
         case 9: out=out+" 9illions"
         break;
@@ -184,14 +190,23 @@ for(var i=0;i<temp.length;i++)
 {   
     ctr = i
     var z =temp[i]
+    console.log(z)
+    if(temp[i].join('')=="000")
+    {
+        continue
+    }
+    
     for(var j=0;j<z.length;j++)
     {
+        
         if((z[j+1]==null))
         {
             var y = z[j]
-            if(j==2)
+            if(j==2&&y!=0)
                 {
+
                     out = A(parseInt(y))+" hundred"+out
+                    console.log("flag A")
                 }
             else
             {
@@ -207,10 +222,11 @@ for(var i=0;i<temp.length;i++)
                     }
                     else if(y>9 && y<20)
                     {
-                        out= B(parseInt(y))+placeholder(ctr)+out
-                        console.log("flag 1 "+ y +"-->> "+out)
+                        if(y!=0)
+                        {out= B(parseInt(y))+placeholder(ctr)+out
+                        console.log("flag 1 "+ y +"-->> "+out)}
                     }
-                    else if(y>19)
+                    else if(y>19&&y!=0)
                     {
                         t2 = y.toString()
                         console.log()
@@ -220,9 +236,21 @@ for(var i=0;i<temp.length;i++)
 
                         console.log("flag 2 "+ y +"->"+out)
                     }
+
+                    else if(y==0)
+                    {
+                        out= " "+out+placeholder(" ")
+                        console.log("flag B "+y)
+                        console.log("--")
+                        j=j+1
+                    }
                 }
-            }   
-            console.log("flag 3 "+ y +"-> "+out)
+            out=out+" "
+            console.log("flag C"+y)
+            }
+
+
+            //console.log("flag 3 "+ y +"-> "+out)
 
         }
         else
@@ -234,11 +262,17 @@ for(var i=0;i<temp.length;i++)
 
                 console.log(A(y)+" --- ")
             }
-            else if(y>9 && y<20)
+            else if(y>9 && y<20 && y!=0)
             {
-                out= B(parseInt(y))+placeholder(ctr)+out
-                console.log("flag 4 "+ y +"--> "+out+"???")
-                j+=1
+                if(y!=0)
+                {
+                    out= B(parseInt(y))+placeholder(ctr)+out
+                    console.log("flag 4 "+ y +"--> "+out)
+                    j+=1
+                }
+                else{
+                    console.log(".....")
+                }
             }
             else if(y>19)
             {
@@ -260,6 +294,6 @@ for(var i=0;i<temp.length;i++)
 
 //console.log(temp);
 var a = out.split(" ")
-console.log("\n\n\n\nNum:"+inp+"\nfinal: "+out)
+console.log("\n\n\n\nNum:"+inp+"\nfinal: "+out+" only")
 
 }
