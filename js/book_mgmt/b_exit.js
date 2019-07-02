@@ -1,0 +1,4 @@
+function Exit()
+{
+    process.exit()
+}

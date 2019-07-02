@@ -1,5 +1,5 @@
 //--------------------------------------------
-var inp = "0000000000000000000"
+var inp = "123456789012"
 if(inp == 0){
     console.log("zero only")
     return 0
@@ -8,8 +8,8 @@ var l=inp.length
 console.log("")
 var st = toString(inp)
 var str = parseInt(inp)
-var abc = inp.split("").reverse().join("");
-
+var abc = inp.split("").join("");
+console.log("abc: "+abc)
 
 if(l>20)
 {
@@ -46,6 +46,7 @@ function sep(num, c){
     return tempArray;
 }
 
+console.log("tempARr: "+temp)
 //-----------------------------------------------------------------------------
 
 function A(y)
