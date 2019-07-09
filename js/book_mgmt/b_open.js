@@ -1,16 +1,17 @@
 var fs = require("fs"); //import the file stream (fs) package
-var rl = require("readline")
-var prompts = rl.createInterface(process.stdin, process.stdout)
-
+var rl = require("readline-sync");
+//var prompts = rl.createInterface(process.stdin, process.stdout)
+var arr = []
+ function test(arr,input)
+ {
+     console.log(arr.push(input.toString()))
+ }
 //var f="zz" //file name
 
-prompts.question("enter the book name: ", function(f){
-    var msg="kg"
+var c=rl.question("enter the book name: ")
 
-    f="D:\\training-workspace\\assignment\\js\\book_mgmt\\files\\"+f+".txt" // appending extension to the file name
+c="D:\\training-workspace\\assignment\\js\\book_mgmt\\files\\"+c+".txt"
+// appending path and extension to the file name
+var contents = fs.readFileSync(c, "utf8");
 
-fs.readFile(f, "utf-8", (err, data) => {
-    console.log("File Data: ")
-    console.log(data);
-});
-});
+console.log(contents);

@@ -3,40 +3,30 @@ var rl = require("readline")
 var f="" //file name to be set
 var data= ""
 var flg=0
-
+var msg="kg"
 var prompts = rl.createInterface(process.stdin, process.stdout)
 
 prompts.question("enter the book name: ", function(f){
-  var msg="kg"
+ 
 
   f="D:\\training-workspace\\assignment\\js\\book_mgmt\\files\\"+f+".txt" // appending extension to the file name
-   //data to be entered into the file...
-//-----------------------------------
-  /*fs.open(f, "na", function(err) {
-    if (err) console.log(err);
-    console.log("Successfully Create to File. "+msg);
-  });*/
   fs.stat(f, (err, stats) => {
-    if (err) 
-      {console.log("file does not exist!")
-      flg=0}
-    //throw err;
-    else
-      {flg=1
-      console.log("file present");}
-
-    if(flg==0){
-      process.abort()
+    if (err)
+    {
+      console.log("file does not exist!")
+      flg=0
     }
-    else
-    writeFile()
+    prompts.question("enter the book data: ", function(data){
+
+      fs.writeFile(f, data, {overwrite:false}, function(err) {
+        if (err) console.log(err);
+        console.log("Successfully Written to File. ");
+        });
+    
+      });
   });
-
-
-
-//process.exit() // to exit process
 });
-function open()
+function open1()
   {
     fs.open(f, "w", function(err) {
       if (err) console.log(err);
@@ -44,7 +34,7 @@ function open()
     });
   }
 
-function writeFile(){
+function write2File(f){
   prompts.question("enter the book data: ", function(data){
 
     fs.writeFile(f, data, {overwrite:false}, function(err) {
