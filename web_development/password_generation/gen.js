@@ -1,14 +1,14 @@
 function randomString() {
-    var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('');
+    var charset = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('');
     var length=document.getElementById("len").value;
 
     if (! length) {
-        length = Math.floor(Math.random() * chars.length);
+        length = Math.floor(Math.random() * charset.length);
     }
 
     var str = '';
     for (var i = 0; i < length; i++) {
-        str += chars[Math.floor(Math.random() * chars.length)];
+        str += charset[Math.floor(Math.random() * charset.length)];
     }
 
     alert("Your Password: "+str);

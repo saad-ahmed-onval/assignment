@@ -1,0 +1,16 @@
+body{
+    width: match-parent;
+    height: match-parent;
+    background-color: blue;
+    align-content: center;
+    margin-top: 25%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 25%;
+    align-content: center;
+}
+label{
+    font-family: Impact;
+    font-size: 60px;
+    font-weight: 200;
+}
