@@ -14,14 +14,20 @@ app.get("/mul/:_1/:_2", function(req, res){
     let _b = (req.param("_2"))
 
     console.log("validating...");
-    if(val.intValidate(_a,_b))
+    //----------------------------------------
+    
     {
         var a = math.mul(_a,_b)
         res.json({home : app.path()=="" ? true:false, response:{ inputs:[_a,_b] ,output:a}})
     }
+
+    //----------------------------------------
+    /*if(val.intValidate(_a,_b))
+    {
+    }
     else
         res.json({err:1, result:"ERROR: Not a correct value type, Enter correct INT value"})
-})
+*/})
 
 
 app.get("/sqrt/:_1", function(req, res){
