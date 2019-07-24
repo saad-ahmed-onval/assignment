@@ -1,0 +1,108 @@
+body{
+    font:bold;
+    color: black;
+}
+
+.topnav{
+    background-color: black;
+    overflow: hidden;
+    font-family: Arial;
+    position: fixed;
+    width: 100vw;
+}
+
+/*style the links inside nav*/
+.topnav a, button.dropbtn{
+    float: left;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 4em;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.topnav > form{
+    float: right;
+    padding: 20px;
+}
+
+/*The dropdown container*/
+.dropdown{
+    float: left;
+    overflow: hidden;
+}
+
+/*The dropdown button*/
+.dropdown, .dropbtn{
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: whitesmoke;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+/*Adding a red background color to the navbar on hover*/
+.topnav a:hover, .dropdown:hover .dropbtn{
+    background-color: brown;
+}
+
+/*The dropdown hidden content*/
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px
+        rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/*The links in the dropdown content*/
+.dropdown-content a{
+    float: none;
+    color: whitesmoke;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+    text-align: left;
+}
+
+/*add gray color to dropdown list on hover*/
+.dropdown-content a:hover{
+    background-color: brown;
+}
+
+/*show dropdown content on hover*/
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+
+.left-table{
+    padding: 55px;
+    float: left;
+}
+
+table {
+    background-color:khaki;
+}
+
+div.center-set {
+    float: inline-start;
+    max-width: 420px;
+}
+
+.right-searchbar{
+    float: right;
+}
+
+footer{
+    display: flex;
+    padding: 5px;
+    background-color: grey;
+    color: #fff;
+}
